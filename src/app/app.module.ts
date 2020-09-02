@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OtherModule } from './other/other.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // JS module => reference file
 // import { NgModule } from '@angular/core';
@@ -22,7 +23,8 @@ import { OtherModule } from './other/other.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    OtherModule
+    OtherModule,
+    BrowserAnimationsModule
   ],
   exports: [
     // AppComponent, AppRoutingModule

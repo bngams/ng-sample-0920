@@ -4,8 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-other',
   template: `
     <p>
-      other works!
+      Use material component
     </p>
+    <button mat-raised-button color="primary">Primary</button>
   `,
   styles: [
   ]
