@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { OtherModule } from './modules/other/other.module';
-import { MaterialModule } from './modules/material.module';
+import { SharedModule } from './modules/shared/shared.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -31,7 +31,7 @@ import { BasicSyntaxComponent } from './components/basic-syntax/basic-syntax.com
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule,
+    SharedModule,
     OtherModule
   ],
   exports: [
