@@ -32,7 +32,7 @@ import { BasicSyntaxComponent } from './components/basic-syntax/basic-syntax.com
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    OtherModule,
+    OtherModule
   ],
   exports: [
     // AppComponent, AppRoutingModule
