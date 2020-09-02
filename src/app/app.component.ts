@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// interface vs class
-interface Person {
-  firstname: string;
-  lastname: string;
-}
-
 // annotation - decorator
 @Component({
   selector: 'app-root', // markup (prefix)

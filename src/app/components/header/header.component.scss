@@ -9,4 +9,9 @@ mat-toolbar {
 .menu-link {
     color: #fff;
     margin: 0 15px;
+    text-decoration: none;
+}
+
+.active {
+    text-decoration: underline;
 }
