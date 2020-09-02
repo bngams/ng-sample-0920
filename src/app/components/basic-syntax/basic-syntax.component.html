@@ -1,0 +1,36 @@
+<!-- Interpolation {{ expression }} -->
+<h1>{{ title | uppercase }}</h1>
+<!-- pipe => classes angular -->
+<p>{{ 1 + 1 }}</p>
+<p>{{ title + ' other string' }}</p>
+<p>{{ (true) ?  title : 'other' }}</p>
+
+<!-- property binding: [property]="expression" -->
+<input [disabled]="myBoolean" #myInput>
+
+<!-- # => template variable -->
+{{ myInput.value }}
+
+<!-- event binding: (event)="expression" -->
+<button (click)="myBoolean = !myBoolean">Toggle</button>
+<!-- <button (click)="toggleMyBoolean()">Toggle</button> -->
+
+<!-- directives attributs -->
+<p [hidden]="myBoolean">myBoolean is true</p>
+
+<!-- directives structure -->
+<p *ngIf="myBoolean else elseTemplate">myBoolean is true</p>
+<!-- Complete notation -->
+<ng-template [ngIf]="myBoolean">
+    <p>myBoolean is true</p>
+</ng-template>
+<!-- ng template used in *ngIf ... else -->
+<ng-template #elseTemplate>
+    my Boolean is false
+</ng-template>
+
+<!-- ngFor -->
+<ng-container *ngFor="let p of myData;">
+    <!-- Elvis operator ?. -->
+    {{ p?.firstname }} - {{ p.lastname}}
+</ng-container>

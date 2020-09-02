@@ -8,6 +8,7 @@ import { MaterialModule } from './modules/material.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { BasicSyntaxComponent } from './components/basic-syntax/basic-syntax.component';
 
 // JS module => reference file
 // import { NgModule } from '@angular/core';
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   declarations: [
     AppComponent,
     HeaderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BasicSyntaxComponent
   ],
   imports: [
     BrowserModule,
