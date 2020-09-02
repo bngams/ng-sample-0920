@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OtherComponent } from './other.component';
-import { MaterialModule } from 'src/app/material.module';
+import { MaterialModule } from 'src/app/modules/material.module';
 
 
 @NgModule({

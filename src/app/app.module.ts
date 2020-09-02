@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { OtherModule } from './modules/other/other.module';
+import { MaterialModule } from './modules/material.module';
 import { AppComponent } from './app.component';
-import { OtherModule } from './other/other.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './components/header/header.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 // JS module => reference file
 // import { NgModule } from '@angular/core';
@@ -18,13 +21,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // exports => can use outside
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    MaterialModule,
     OtherModule,
-    BrowserAnimationsModule
   ],
   exports: [
     // AppComponent, AppRoutingModule
