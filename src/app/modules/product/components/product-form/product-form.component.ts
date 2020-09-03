@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-form',
@@ -13,7 +14,7 @@ export class ProductFormComponent implements OnInit {
 
   productForm: FormGroup;
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -29,7 +30,9 @@ export class ProductFormComponent implements OnInit {
   submitProduct(): void {
     console.log('submitProduct');
     const p: Product = this.productForm.getRawValue();
-    this.newProduct.emit(p);
+    this.productService.createProduct(p).subscribe(
+      createdProduct => this.newProduct.emit(createdProduct)
+    );
   }
 
 }
