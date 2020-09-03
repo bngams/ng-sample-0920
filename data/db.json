@@ -1,0 +1,23 @@
+{
+    "products": [
+        {
+            "name": "Product 1",
+            "price": 10
+        },
+        {
+            "name": "Product 2",
+            "price": 20
+        },
+        {
+            "name": "Product 3",
+            "price": 30
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ]
+}

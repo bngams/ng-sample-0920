@@ -2,6 +2,7 @@ import { Component, OnInit, QueryList, ViewChildren, AfterViewInit } from '@angu
 import { Product } from '../../models/product';
 import { PRODUCTS } from '../../mocks/products.mock';
 import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductService } from '../../services/product.service';
 
 
 @Component({
@@ -16,14 +17,22 @@ export class ProductListComponent implements OnInit, AfterViewInit {
   @ViewChildren(ProductCardComponent)
   productCards: QueryList<ProductCardComponent>;
 
-  constructor() { }
+  // Inject @Injectable class
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.products = PRODUCTS;
+    // this.products = PRODUCTS;
+    this.loadProducts();
   }
 
   ngAfterViewInit(): void {
     console.log(this.productCards.first);
+  }
+
+  loadProducts(): void {
+    this.productService.getProductsAsPromise().then(
+      data => this.products = data
+    );
   }
 
 }
