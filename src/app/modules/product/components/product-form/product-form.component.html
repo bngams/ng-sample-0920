@@ -1,15 +1,15 @@
-<form (submit)="submitProduct()">
+<form [formGroup]="productForm" (ngSubmit)="submitProduct()">
 
     <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="">
+        <input matInput placeholder="" formControlName="name" required>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-label>Price</mat-label>
-        <input matInput placeholder="">
+        <input matInput placeholder="" formControlName="price" required>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Add</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.valid">Add</button>
 
 </form>

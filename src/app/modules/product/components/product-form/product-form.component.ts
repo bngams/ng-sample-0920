@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-form',
@@ -10,16 +11,25 @@ export class ProductFormComponent implements OnInit {
 
   @Output() newProduct = new EventEmitter<Product>();
 
+  productForm: FormGroup;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm(): void {
+    this.productForm = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      price: new FormControl('', [Validators.required, Validators.min(1)]),
+    });
   }
 
   submitProduct(): void {
     console.log('submitProduct');
-    this.newProduct.emit(
-      { name: 'ProductAdd', price: 15 }
-    );
+    const p: Product = this.productForm.getRawValue();
+    this.newProduct.emit(p);
   }
 
 }
