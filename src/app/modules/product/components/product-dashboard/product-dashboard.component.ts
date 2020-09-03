@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../../models/product';
+import { ProductListComponent } from '../product-list/product-list.component';
 
 @Component({
   selector: 'app-product-dashboard',
@@ -8,13 +9,16 @@ import { Product } from '../../models/product';
 })
 export class ProductDashboardComponent implements OnInit {
 
+  @ViewChild(ProductListComponent)
+  productListComp: ProductListComponent;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   addProduct(p: Product): void {
-    console.log(p);
+    this.productListComp.products.push(p);
   }
 
 }
