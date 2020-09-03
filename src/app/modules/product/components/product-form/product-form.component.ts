@@ -10,6 +10,8 @@ export class ProductFormComponent implements OnInit {
 
   @Output() newProduct = new EventEmitter<Product>();
 
+  product: Product = {} as Product;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,9 +19,7 @@ export class ProductFormComponent implements OnInit {
 
   submitProduct(): void {
     console.log('submitProduct');
-    this.newProduct.emit(
-      { name: 'ProductAdd', price: 15 }
-    );
+    this.newProduct.emit(this.product);
   }
 
 }
